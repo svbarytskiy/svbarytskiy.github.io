@@ -1,0 +1,170 @@
+.descr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-firstblock {
+        padding: 0 20px;
+
+        @media ($phone) {
+            padding: 0 10px;
+        }
+
+        &__title {
+            margin-top: 100px;
+
+            @media ($phone) {
+                margin-top: 50px;
+            }
+
+            &_text {
+                font-family: $main-font;
+                font-weight: 900;
+                font-size: 48px;
+                line-height: 56px;
+                color: var(--them-dark-black1);
+
+                @media ($phone) {
+                    font-size: 36px;
+                    line-height: 42px;
+                }
+            }
+        }
+
+        &__article {
+            margin-top: 30px;
+            max-width: 790px;
+            font-family: $main-font;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: var(--them-dark-black2);
+
+            @media ($phone) {
+                margin-top: 20px;
+            }
+        }
+
+        &__slider {
+            margin-top: 30px;
+
+            .slides {
+                position: relative;
+                max-width: 790px;
+                overflow: hidden;
+                height: 323px;
+                border-radius: 5px;
+
+                &-imageList {
+                    position: absolute;
+                    list-style: none;
+                    display: flex;
+                    left: 0;
+                    transition: 0.5s;
+
+                    &__item {
+                        width: 790px;
+                        height: 323px;
+                        background-size: auto 100%;
+                    }
+                }
+            }
+
+            .descrRangebox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30px;
+
+                &-rangevalue {
+                    display: flex;
+
+                    &__current-value {
+                        color: var(--them-dark-black1);
+                    }
+
+                    &__total-value {
+                        color: $gray;
+                    }
+                }
+
+                &-rangewrapper {
+                    &__range {
+                        background: $gray;
+                        width: 245px;
+
+                        &::-webkit-slider-thumb {
+                            background: var(--them-dark-black1);
+                            width: 62px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__btn {
+            width: 245px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            margin-top: 30px;
+            margin-bottom: 100px;
+
+            @media ($phone) {
+                margin-top: 22px;
+            }
+
+            &_link {
+                padding: 12px 39px;
+            }
+        }
+    }
+
+    &-secondblock {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: var(--them-white-light);
+        padding: 100px 13%;
+
+        @media ($hd-tablet) {
+            padding: 100px 8%;
+        }
+
+        @media ($tablet) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .secondblock-item {
+            width: 32%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 50px;
+
+            @media ($tablet) {
+                width: 45%;
+            }
+
+            @media ($phone) {
+                width: 99%;
+            }
+
+            &__title {
+                margin: 15px 0;
+                font-weight: 900;
+                font-size: 20px;
+                line-height: 23px;
+                color: var(--them-dark-black1);
+            }
+
+            &__text {
+                text-align: center;
+                font-size: 14px;
+                font-weight: 400;
+                font-family: $main-font;
+                color: var(--them-dark-black2);
+            }
+        }
+    }
+}

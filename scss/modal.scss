@@ -1,0 +1,388 @@
+.modal-wrapper {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    overflow-y: auto;
+    display: none;
+    z-index: 8;
+    padding: 30px;
+
+    @media ($phone) {
+        padding: 0;
+    }
+
+    .modal {
+        height: 795px;
+        width: 1200px;
+        position: relative;
+        background-color: #fff;
+        margin: auto;
+        color: #313131;
+        cursor: default;
+        display: flex;
+
+        @media ($hd) {
+            height: 1243px;
+            width: 640px;
+        }
+
+        @media ($tablet) {
+            width: 300px;
+        }
+
+        .modal-close {
+            position: absolute;
+            bottom: 70px;
+            right: 42%;
+            z-index: 5;
+            cursor: pointer;
+            display: none;
+
+            @media ($phone) {
+                display: block;
+            }
+
+            &__text {
+                font-family: $main-font;
+                font-size: 18px;
+                font-weight: 600;
+                color: #313131;
+            }
+        }
+
+        &-img {
+            background-size: 100% auto no-repeat;
+            height: 100%;
+            background-image: url(../img/modals-bc.jpg);
+            width: 197px;
+
+
+            @media ($hd) {
+                width: 164px;
+                background-size: cover;
+            }
+
+            @media ($tablet) {
+                display: none;
+            }
+        }
+
+        &-form {
+            height: 100%;
+            width: 100%;
+            max-width: 953px;
+            padding: 100px 110px 80px;
+
+            @media ($hd) {
+                max-width: 476px;
+                padding: 105px 60px 129px 60px;
+            }
+
+            @media ($tablet) {
+                padding: 105px 20px 159px;
+            }
+
+            &__title {
+                text-align: center;
+                padding-bottom: 15px;
+
+
+                .form-title__text {
+                    font-family: $main-font;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 28px;
+                    text-transform: uppercase;
+                    color: #313131;
+
+                    @media ($tablet) {
+                        font-size: 18px;
+                        line-height: 21px;
+                    }
+                }
+            }
+
+            .form-group_item {
+                margin-bottom: 30px;
+            }
+
+            &-group {
+                margin-top: 50px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                @media ($hd) {
+                    flex-direction: column;
+                    margin-top: 30px;
+                }
+
+                .form-group__aboutyou {
+
+                    &__title {
+                        font-family: $main-font;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 21px;
+                        color: #828282;
+                        margin-bottom: 29px;
+                    }
+                }
+
+                .form-group-checkout {
+                    .form-group_item:last-child {
+                        margin-bottom: 0;
+
+                        @media ($hd) {
+                            margin-bottom: 29px;
+                        }
+                    }
+
+                    &__title {
+                        font-family: $main-font;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 21px;
+                        color: $black2;
+                        margin-bottom: 29px;
+                        margin-right: auto;
+                    }
+                }
+            }
+
+            &__text {
+                margin-top: 10px;
+                width: 100%;
+                max-width: 478px;
+                font-family: $main-font;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 15px;
+                text-align: center;
+                margin: 0 auto;
+                color: #828282;
+
+                @media ($hd) {
+                    max-width: 335px;
+                }
+            }
+
+            &__btn {
+                margin: 0 auto;
+                max-width: 245px;
+                box-sizing: border-box;
+                margin-top: 40px;
+
+                &__link {
+                    padding: 18px 88px;
+                }
+            }
+        }
+
+        .input_title {
+            display: block;
+            position: absolute;
+            background: $white;
+            font-family: $main-font;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            z-index: 2;
+            top: -8px;
+            left: 15px;
+            color: #828282;
+            padding: 0 17px;
+        }
+
+        .modal-input__box {
+            position: relative;
+            width: 335px;
+            background: #FFFFFF;
+            border: 1px solid #828282;
+            border-radius: 6px;
+            height: 56px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+
+            @media ($tablet) {
+                width: 245px;
+            }
+
+            .modal-input {
+                width: 100%;
+                height: 100%;
+                border: none;
+                outline: none;
+                padding-left: 20px;
+                padding-right: 35px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                color: #828282;
+                font-family: $main-font;
+                font-size: 18px;
+
+                @media ($tablet) {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .modal-input__phone {
+            margin-left: 80px;
+            max-width: 245px;
+
+            @media ($tablet) {
+                max-width: 155px;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+
+            &-button {
+                position: relative;
+                display: block;
+                width: 335px;
+                text-align: left;
+                background: #FFFFFF;
+                border: 1px solid #828282;
+                border-radius: 6px;
+                height: 56px;
+                padding: 18px 35px 18px 20px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                cursor: pointer;
+                color: #828282;
+                font-family: $main-font;
+                font-size: 18px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 15px;
+                    transform: translateY(-50%);
+                    width: 0;
+                    height: 0;
+                    border-width: 6.4px 4px 0 4px;
+                    border-color: $black1 transparent transparent transparent;
+                    border-style: solid;
+                    pointer-events: none;
+                }
+
+                @media ($tablet) {
+                    width: 245px;
+                    font-size: 14px;
+                }
+            }
+
+            .dropdown-button__phone {
+                position: absolute;
+                width: 86px;
+                height: 32px;
+                border: none;
+                border-radius: 0;
+                border-right: 1px solid #828282;
+                padding: 0px 5px 0px 26px;
+                top: -5px;
+                color: $black1;
+
+            }
+
+            .dropdown-button__expiry {
+                position: absolute;
+                width: 50%;
+                height: 32px;
+                border: none;
+                border-radius: 0;
+                border-right: 1px solid #828282;
+                padding: 0px 5px 0px 26px;
+                top: -5px;
+                color: $black1;
+            }
+
+            .dropdown-button__expirydate {
+                position: absolute;
+                width: 50%;
+                height: 32px;
+                border: none;
+                padding: 0px 5px 0px 26px;
+                border-radius: 0;
+                top: -5px;
+                color: $black1;
+                right: 0;
+            }
+
+            &-list {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 60px;
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                background: #FFFFFF;
+                box-shadow: 0px 4px 8px rgba(176, 198, 225, 0.6);
+                overflow: hidden;
+                border-radius: 6px;
+                width: 100%;
+                z-index: 3;
+            }
+
+            .dropdown-list__phone {
+                width: 86px;
+            }
+        }
+
+        .dropdown-button:focus,
+        .dropdown-button--active {
+            outline: none;
+        }
+
+        .dropdown-list--visible {
+            display: block;
+        }
+
+        .dropdown-list__item {
+            margin: 0;
+            padding: 0;
+            border: 1px solid #828282;
+            border-bottom: 0px;
+            padding: 18px 20px;
+            cursor: pointer;
+            color: #828282;
+            font-family: $main-font;
+        }
+
+        .dropdown-list__item:first-child {
+            border-radius: 6px 6px 0 0;
+        }
+
+        .dropdown-list__item:last-child {
+            border-radius: 0 0 6px 6px;
+            border-bottom: 1px solid #7E9BBD;
+        }
+
+        .dropdown-list__item:hover {
+            background: rgba(176, 198, 225, 0.26);
+        }
+
+        .dropdown-input-hidden {
+            display: none;
+        }
+
+        .dropdown-button__choose {
+            @media ($hd) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

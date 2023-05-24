@@ -1,0 +1,181 @@
+.header {
+    background: var(--them-white);
+    position: relative;
+    max-width: 100%;
+    height: 94px;
+    padding: 0 150px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 4px 8px rgba(44, 101, 77, 0.08);
+    z-index: 1;
+
+    @media ($hd) {
+        padding: 0 6%;
+    }
+
+    @media ($tablet) {
+        padding: 0 2.5%;
+    }
+
+    @media ($phone) {
+        padding: 0 10px;
+    }
+
+    &-logo {
+        z-index: 1;
+        svg {
+            fill: var(--them-dark-black1);
+        }
+    }
+    
+    &-navbar {
+        width: 575px;
+        height: 94px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+
+        @media ($hd) {
+            width: 420px;
+        }
+
+        @media ($tablet) {
+            background: var(--them-white);
+             position: absolute;
+             flex-direction: column;
+             height: 0px;
+             width: 100%;
+             top: -200px;
+             left: 0;
+             box-shadow: 0px 4px 8px rgba(44, 101, 77, 0.08);
+             padding-bottom: 14px;
+             transition: .5s;
+             display: flex;
+         }
+
+
+        &__navItem {
+            font-family: $main-font;
+            font-weight: 500;
+
+            @media ($tablet) {
+                margin: 7px 0;
+             }
+             
+             & a {
+                text-decoration: none;
+                color: var(--them-dark-black1);
+
+                &:hover {
+                    border-bottom: 1px solid var(--them-dark-black1);
+                    transition: all 0.5s;
+                }
+            }
+        }
+
+        .active {
+            font-weight: 900;
+
+            & a {
+                border-bottom: 1px solid var(--them-dark-black1);
+            }
+        }
+    }
+.nav-active{
+    height: 300px;
+    transition: .5s;
+    top: calc(90%);
+}
+    &-btns {
+        display: flex;
+
+        &__toggle {
+            position: relative;
+            width: 54px;
+            height: 30px;
+            -webkit-appearance: none;
+            outline: none;
+            background: $white-light;
+            transition: .5s;
+            border-radius: 190px;
+            cursor: pointer;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                border-radius: 10px;
+                background: $white;
+                top: 5px;
+                left: 6px;
+                transition: .5s;
+            }
+
+        }
+
+        &__toggle:checked {
+            background: $black2;
+
+            &::before {
+                left: 28px;
+                background: #1b1b1b;
+            }
+        }
+
+        .nav-toggle {
+            display: none;
+            position: relative;
+            padding: 10px;
+            background: transparent;
+            border: 1px solid transparent;
+            top: 44%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            @media ($tablet) {
+                display: block;
+            }
+        }
+
+        .nav-toggle:focus {
+            outline-width: 0;
+        }
+
+        .nav-toggle [class*='bar-'] {
+            background: var(--them-dark-black1);
+            display: block;
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .2s ease all;
+            transition: .2s ease all;
+            height: 1px;
+            width: 40px;
+            margin-bottom: 9px;
+        }
+
+        .nav-toggle .bar-bot {
+            margin-bottom: 0;
+        }
+
+        .opened .bar-top {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform-origin: 15% 15%;
+            transform-origin: 15% 15%;
+        }
+
+        .opened .bar-mid {
+            opacity: 0;
+        }
+
+        .opened .bar-bot {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 15% 95%;
+            transform-origin: 15% 95%;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+@import 'fonts';
+@import 'vars';
+@import 'mixins';
+@import 'header';
+@import 'footer';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --them-white: #FFFFFF;
+    --them-white-light: #F2F2F2;
+    --them-dark-black1: #333333;
+    --them-dark-black2: #4F4F4F;
+    --light-gray: rgba(189, 189, 189, 0.57);
+    --gray: #BDBDBD;
+    --the-map-black: #333333;
+    --the-map-white: #E1E1E1;
+}
+
+[dark] {
+    --them-white: #333333;
+    --them-white-light: #4F4F4F;
+    --them-dark-black1: #FFFFFF;
+    --them-dark-black2: #F2F2F2;
+    --light-gray: $light-gray;
+    --gray: $gray;
+    --the-map-black: #E1E1E1;
+    --the-map-white: #333333;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 1920px;
+    background-color: var(--them-white);
+}
+
+.main {
+    @import 'introduction';
+    @import 'howItsWork';
+    @import 'petsInZoo';
+    @import 'payandfeed';
+    @import 'testimonials';
+    @import 'map';
+    @import 'modal';
+}
+
+.btn {
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(106.89deg, #4BD8B5 -14.32%, #49D6DF 100.68%);
+    text-decoration: none;
+    color: $white;
+    transition: 0.5s ease;
+
+    &:hover {
+        background: linear-gradient(106.89deg, #4BD8B5 -14.32%, #49D6DF 100.68%);
+        transition: 0.5s ease;
+        box-shadow: 20px 20px 200px 6px #4BD8B5;
+    }
+
+    svg {
+        margin-right: 5px;
+    }
+
+    span {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+}
+
+.current-value {
+    font-family: $main-font;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.total-value {
+    font-family: $main-font;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 28px;
+    margin-top: 3px;
+}
+
+.rangeInput {
+    -webkit-appearance: none;
+    height: 8px;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 10px;
+
+        @media ($phone) {
+            height: 10px;
+        }
+    }
+}

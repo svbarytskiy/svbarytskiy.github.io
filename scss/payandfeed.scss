@@ -1,0 +1,106 @@
+.pay {
+    background-color: var(--them-white-light);
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media ($phone) {
+        padding: 50px 0;
+    }
+
+    &-title {
+        font-family: $main-font;
+        text-align: center;
+
+        &__text {
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 56px;
+            color: var(--them-dark-black1);
+
+            @media ($phone) {
+                font-size: 36px;
+                line-height: 42px;
+            }
+        }
+    }
+
+    &-article {
+        font-family: $main-font;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        margin-top: 30px;
+        text-align: center;
+        color: var(--them-dark-black1);
+
+        @media ($tablet) {
+            width: 84%;
+        }
+
+        @media ($phone) {
+            display: none;
+        }
+    }
+
+    &-instruction {
+        margin-top: 90px;
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+
+        @media ($hd) {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        &__step {
+            border-radius: 50%;
+            border: 3px solid #4BD8B5;
+            width: 245px;
+            height: 245px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .step-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &__article {
+                    margin-top: 18px;
+                    font-family: $main-font;
+                    font-weight: 900;
+                    font-size: 16px;
+                    line-height: 23px;
+                    text-align: center;
+                    width: 136px;
+                    color: var(--them-dark-black1);
+                }
+            }
+        }
+
+        &__arrow {
+            display: flex;
+            align-items: center;
+
+            @media ($hd) {
+                rotate: 90deg;
+                height: 60px;
+            }
+        }
+    }
+
+    &-btn {
+        margin-top: 50px;
+
+        &__link {
+            padding: 18px 88px;
+            font-size: 18px
+        }
+    }
+}

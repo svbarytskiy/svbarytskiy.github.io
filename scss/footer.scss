@@ -1,0 +1,370 @@
+.footer {
+    width: 100%;
+    background: $black1;
+    padding: 90px 150px 70px 150px;
+
+    @media ($hd) {
+        padding: 90px 75px 35px 75px;
+    }
+
+    @media ($tablet) {
+        padding: 85px 25px 45px 20px;
+    }
+
+    @media ($phone) {
+        padding: 40px 10px 25px 10px;
+    }
+
+    .head {
+        display: flex;
+
+        &-wrapper {
+            width: 100%;
+            display: flex;
+
+            @media ($hd-tablet) {
+                width: 50%;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-right: auto;
+            }
+
+            @media ($hd-tablet) {
+                width: 40%;
+            }
+
+            &__logo {
+                margin-right: 46%;
+
+                @media ($hd-tablet) {
+                    margin-bottom: 30px;
+                }
+
+                @media ($hd) {
+                    margin-right: 54%;
+                }
+
+                svg {
+                    fill: $white;
+                }
+            }
+
+            &__navbar {
+                display: flex;
+
+                @media ($hd-tablet) {
+                    flex-direction: column;
+                }
+
+                @media ($tablet) {
+                    display: none;
+                }
+
+                .navbar-navItem {
+                    font-family: $main-font;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 19px;
+                    margin: 0 73px 0 0;
+
+                    @media ($hd-tablet) {
+                        margin-bottom: 10px;
+                    }
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+
+        &-btn {
+            display: none;
+            width: 275px;
+            box-sizing: border-box;
+
+            &__link {
+                padding: 17px 20px;
+            }
+
+            @media ($hd-tablet) {
+                display: block;
+            }
+
+            @media ($phone) {
+                display: none;
+            }
+        }
+    }
+
+    .body {
+        display: flex;
+
+        @media ($hd-tablet) {
+            flex-direction: column;
+        }
+
+        &-contacts {
+            margin: 67px 0 60px 0;
+            width: 50%;
+
+            @media ($hd) {
+                width: 60%;
+            }
+
+            @media ($phone) {
+                width: 100%;
+            }
+
+            &__title {
+                font-family: $main-font;
+                font-weight: 900;
+                font-size: 17px;
+                line-height: 23px;
+                color: $white;
+                margin-bottom: 30px;
+            }
+
+            &__form {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                max-width: 383px;
+
+                .input {
+                    border: none;
+                    background-color: transparent;
+                    border-bottom: 1px solid $gray;
+                    padding: 10px 0;
+                    color: $gray;
+                    width: 100%;
+                    max-width: 383px;
+                    outline: none;
+                    margin-bottom: 23px;
+
+                    &::placeholder {
+                        font-family: $main-font;
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: $gray;
+                        line-height: 16px;
+                    }
+                }
+
+                .textarea-field {
+                    width: 100%;
+                    max-width: 383px;
+                    height: 115px;
+                    border-radius: 3px;
+                    position: relative;
+                    display: block;
+                    margin-bottom: 20px;
+
+
+                    .textarea {
+                        background-color: transparent;
+                        border: 1px solid $gray;
+                        width: 100%;
+                        height: 100%;
+                        resize: none;
+                        padding: 8px;
+                        color: $white;
+                        outline: none;
+                        border-radius: 3px;
+                        position: absolute;
+                        overflow-y: hidden;
+
+                        &:focus+span,
+                        &:valid+span {
+                            top: -7px;
+                            background: $black1;
+                            padding: 0 5px;
+                        }
+                    }
+
+                    span {
+                        position: absolute;
+                        font-family: $main-font;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 14px;
+                        top: 8px;
+                        left: 8px;
+                        color: $gray;
+                        transition: 0.2s;
+                        cursor: text;
+                    }
+                }
+
+                .checkbox {
+                    display: block;
+                    position: relative;
+                    margin-bottom: 20px;
+
+                    &__input {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        position: absolute;
+                    }
+
+                    &__text {
+                        padding-left: 20px;
+                        font-family: $main-font;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 14px;
+                        color: $gray;
+
+                        &::before {
+                            cursor: pointer;
+                            position: absolute;
+                            content: "";
+                            display: block;
+                            width: 12px;
+                            height: 12px;
+                            border: 1px solid $gray;
+                            border-radius: 1px;
+                            top: 3px;
+                            left: 0;
+                            z-index: 1;
+                        }
+
+                        &::after {
+                            cursor: pointer;
+                            content: "";
+                            display: block;
+                            width: 15px;
+                            height: 15px;
+                            background: url(/img/checkmark.svg) no-repeat;
+                            background-size: 15px;
+                            position: absolute;
+                            top: 3px;
+                            left: 0;
+                            z-index: 2;
+                            opacity: 0;
+                        }
+                    }
+
+                    .checkbox__input:checked+.checkbox__text::after {
+                        opacity: 1;
+                    }
+                }
+
+                .submit-btn {
+                    border: none;
+                    font-family: $main-font;
+                    background-color: transparent;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: $white-light;
+                    cursor: pointer;
+                    margin-left: auto;
+                }
+            }
+        }
+
+        &-contacts-info {
+            margin-top: 67px;
+            font-family: $main-font;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            text-decoration: none;
+            color: $white-light;
+
+
+
+            &__title {
+                font-family: $main-font;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 16px;
+                text-decoration: uppercase;
+                color: $white-light;
+                margin-bottom: 35px;
+            }
+
+            .contacts-info-item {
+                margin-bottom: 5px;
+
+                &:nth-child(3) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .gmail-link {
+                font-family: $main-font;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                text-decoration: none;
+                color: $white-light;
+            }
+
+            &__socials {
+                margin-top: 25px;
+
+                .socials-iconlist {
+                    display: flex;
+                    list-style: none;
+
+                    &__item {
+                        margin-right: 15px;
+                    }
+                }
+            }
+
+            .contacts-info-btn {
+                width: 275px;
+                box-sizing: border-box;
+                margin-top: 40px;
+
+                &__link {
+                    padding: 17px 20px;
+                }
+
+                @media ($hd-tablet) {
+                    display: none;
+                }
+
+                @media ($phone) {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .bottom {
+        @media ($hd-tablet) {
+            margin-top: 75px;
+        }
+
+        &-line {
+            width: 100%;
+            height: 1px;
+            background: $gray;
+        }
+
+        &-copyrignt {
+            margin-top: 28px;
+            font-family: $main-font;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            color: $gray;
+        }
+    }
+}

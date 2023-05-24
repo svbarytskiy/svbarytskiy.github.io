@@ -1,0 +1,202 @@
+.pets {
+    width: 100%;
+    padding: 100px 0;
+
+    @media ($phone) {
+        padding: 100px 0 50px 0;
+    }
+
+    &-title {
+        font-family: $main-font;
+        text-align: center;
+
+        &__text {
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 56px;
+            color: var(--them-dark-black1);
+
+            @media ($phone) {
+                font-size: 36px;
+                line-height: 42px;
+            }
+        }
+    }
+
+    .petsSlider {
+        margin-top: 35px;
+
+        &-top {
+            margin: 0 auto;
+            display: flex;
+            width: 67%;
+
+            @media ($hd) {
+                width: 75%;
+            }
+
+            @media ($tablet) {
+                width: 97%;
+            }
+
+            &__slides {
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                height: 400px;
+
+                @media ($hd) {
+                    height: 301px;
+                }
+
+                .slides-petsImageList {
+                    height: 100%;
+                    position: absolute;
+                    list-style: none;
+                    display: flex;
+                    left: 0;
+                    transition: 0.5s;
+
+                    &__item {
+                        height: 100%;
+                        width: 278px;
+                        margin-right: 30px;
+                        border-radius: 5px;
+                        background-size: 100% 100%;
+                        transition: 0.5s;
+                        padding: 269px 0 0 22px;
+
+                        @media ($hd) {
+                            width: 210px;
+                            margin-right: 20px;
+                            padding: 183px 7px 0 9px;
+                        }
+
+                        &:hover {
+                            .petsitem-content {
+                                opacity: 1;
+                            }
+                        }
+
+                        .petsitem-content {
+                            max-width: 194px;
+                            transition: ease 0.5s;
+                            opacity: 0;
+
+                            &__text {
+                                color: $white;
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 16px;
+                                font-family: $main-font;
+                            }
+
+                            &__links {
+                                display: flex;
+                                padding-top: 14px;
+
+                                .links-watchLink {
+                                    display: flex;
+                                    align-items: center;
+                                    margin-right: 10px;
+
+                                    &__svg {
+                                        border: 1px solid #4BD8B5;
+                                    }
+
+                                    &__text {
+                                        color: #4BD8B5;
+                                    }
+                                }
+
+                                .links-donateLink {
+                                    display: flex;
+                                    align-items: center;
+
+                                    &__svg {
+                                        border: 1px solid $white;
+                                    }
+
+                                    &__text {
+                                        color: $white;
+                                    }
+                                }
+
+                                .slidesLinkText {
+                                    font-family: $main-font;
+                                    text-decoration: none;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 10px;
+                                    line-height: 24px;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                }
+
+                                .linksvg {
+                                    height: 24px;
+                                    width: 24px;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    justify-content: space-around;
+                                    align-items: center;
+                                    margin-right: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__bottom {
+            .petsRangebox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30px;
+
+                &-rangevalue {
+                    display: flex;
+
+                    &__current-value {
+                        color: var(--them-dark-black1);
+                    }
+
+                    &__total-value {
+                        color: $gray;
+                    }
+                }
+
+                &-rangewrapper {
+                    &__range {
+                        background: $gray;
+                        width: 245px;
+
+                        &::-webkit-slider-thumb {
+                            background: var(--them-dark-black1);
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+
+            .petsSlider-bottom__btn {
+                width: 245px;
+                box-sizing: border-box;
+                margin: 0 auto;
+                margin-top: 30px;
+
+                @media ($phone) {
+                    margin-top: 22px;
+                    margin-bottom: 50px;
+                }
+
+                .bottom-btn__link {
+                    padding: 17px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

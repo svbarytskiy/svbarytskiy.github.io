@@ -1,0 +1,311 @@
+.map {
+    background-color: var(--them-white-light);
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @media ($phone) {
+        padding: 50px 0;
+    }
+
+    &-title {
+        font-family: $main-font;
+        text-align: center;
+
+        &__text {
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 56px;
+            color: var(--them-dark-black1);
+
+            @media ($tablet) {
+                font-size: 40px;
+                line-height: 46px;
+            }
+
+            @media ($phone) {
+                font-size: 36px;
+                line-height: 42px;
+            }
+        }
+    }
+
+    &-wrapper {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+
+        @media ($hd-tablet) {
+            margin-top: 30px;
+
+        }
+
+        &__svg {
+            max-width: 95%;
+
+            @media ($hd) {
+                max-height: 390px;
+                width: 978px;
+            }
+
+            @media ($hd-tablet) {
+                max-height: 300px;
+                width: 744px;
+            }
+
+            @media ($tablet) {
+                max-height: 230px;
+                width: 556px;
+
+            }
+
+            @media ($phone) {
+                max-height: 120px;
+                width: 290px;
+
+            }
+        }
+
+        &__pointerlist {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            position: absolute;
+
+            .pointerlist-item {
+                cursor: pointer;
+                position: absolute;
+
+                &__content {
+                    .card {
+                        opacity: 0;
+                        transition: 0.7s;
+                        position: absolute;
+                        display: flex;
+                        z-index: -1;
+                        background: var(--them-white);
+                        border-radius: 8px;
+                        padding: 40px 55px 44px 44px;
+                        min-width: 440px;
+                        box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.15);
+
+                        @media ($phone) {
+                            min-width: 240px;
+                            padding: 15px 15px 19px 15px;
+                        }
+
+                        &-img {
+                            width: 65px;
+                            height: 65px;
+                            border-radius: 50%;
+                            background-size: 100%;
+                            margin-right: 20px;
+
+                            @media ($phone) {
+                                width: 40px;
+                                height: 40px;
+                                margin-right: 8px;
+                            }
+                        }
+
+                        &-info {
+                            @media ($phone) {
+                                max-width: 151px;
+                            }
+
+                            &__title {
+                                font-family: $main-font;
+                                font-style: normal;
+                                font-weight: 900;
+                                font-size: 18px;
+                                line-height: 21px;
+                                color: $white-light;
+                                margin-bottom: 7px;
+
+                                @media ($phone) {
+                                    font-size: 12px;
+                                    line-height: 16px;
+                                    margin-bottom: 5px;
+                                }
+                            }
+
+                            &__text {
+                                font-family: $main-font;
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 16px;
+                                color: $white-light;
+
+                                @media ($phone) {
+                                    font-size: 11px;
+                                    line-height: 13px;
+                                }
+                            }
+                        }
+                    }
+
+                    .pointer_img {
+                        position: absolute;
+                        top: 14px;
+                        left: 15px;
+                        border-radius: 50%;
+                        width: 43px;
+                        height: 43px;
+                        background-size: 100%;
+
+                        @media ($tablet) {
+                            width: 19px;
+                            height: 19px;
+                            top: 6px;
+                            left: 7px;
+                        }
+                    }
+                }
+            }
+
+            .pointerlist-item:first-child {
+                top: 70px;
+                left: 150px;
+
+                @media ($hd) {
+                    top: 30px;
+                    left: 110px;
+                }
+
+                @media ($hd-tablet) {
+                    top: 7px;
+                    left: 75px;
+                }
+
+                @media ($tablet) {
+                    top: 30px;
+                    left: 70px;
+                }
+
+                @media ($phone) {
+                    top: -5px;
+                    left: 30px;
+                }
+            }
+
+            .pointerlist-item:nth-child(2) {
+                top: 110px;
+                left: 260px;
+
+                .card {
+                    left: -50px;
+                }
+
+                @media ($hd) {
+                    top: 65px;
+                    left: 205px;
+                }
+
+                @media ($hd-tablet) {
+                    top: 27px;
+                    left: 150px;
+                }
+
+                @media ($tablet) {
+                    top: 50px;
+                    left: 120px;
+                }
+
+                @media ($phone) {
+                    top: 4px;
+                    left: 55px;
+                }
+            }
+
+            .pointerlist-item:nth-child(3) {
+                top: 187px;
+                left: 570px;
+
+                .card {
+                    left: -150px;
+                }
+
+                @media ($hd) {
+                    top: 128px;
+                    left: 450px;
+                }
+
+                @media ($hd-tablet) {
+                    top: 77px;
+                    left: 340px;
+                }
+
+                @media ($tablet) {
+                    top: 85px;
+                    left: 265px;
+                }
+
+                @media ($phone) {
+                    top: 23px;
+                    left: 130px;
+                }
+            }
+
+            .pointerlist-item:nth-child(4) {
+                top: 85px;
+                left: 870px;
+
+                .card {
+                    right: 0;
+                }
+
+                @media ($hd) {
+                    top: 50px;
+                    left: 710px;
+                }
+
+                @media ($hd-tablet) {
+                    top: 17px;
+                    left: 525px;
+                }
+
+                @media ($tablet) {
+                    top: 40px;
+                    left: 400px;
+                }
+
+                @media ($phone) {
+                    top: 0;
+                    left: 205px;
+                }
+            }
+
+            .pointer_svg {
+                @media ($tablet) {
+                    width: 32px;
+                    height: 46px;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        width: 245px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        margin-top: 35px;
+
+        @media ($hd-tablet) {
+            margin-top: 20px;
+        }
+
+        @media ($phone) {
+            margin-top: 22px;
+        }
+
+        &__link {
+            padding: 12px 39px;
+        }
+    }
+}

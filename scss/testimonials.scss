@@ -1,0 +1,178 @@
+.testimonials {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media ($phone) {
+        padding: 100px 0 50px 0;
+    }
+
+    &-title {
+        font-family: $main-font;
+        text-align: center;
+
+        &__text {
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 56px;
+            color: var(--them-dark-black1);
+
+            @media ($phone) {
+                font-size: 36px;
+                line-height: 42px;
+            }
+        }
+    }
+
+    &-slider {
+        width: 100%;
+        margin-top: 60px;
+
+        &__top {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .slides {
+                width: 65%;
+                height: 310px;
+                position: relative;
+                overflow: hidden;
+                border-radius: 5px;
+
+                @media ($tablet) {
+                    width: 95%;
+                }
+
+                @media ($phone) {
+                    height: 360px;
+                }
+
+                &-feedbackImageList {
+                    height: 100%;
+                    position: absolute;
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    left: 0;
+                    transition: 0.5s;
+                    border-radius: 5px;
+
+                    &__item {
+                        width: 31vw;
+                        height: 96%;
+                        box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.1);
+                        border-radius: 5px;
+                        margin-right: 0.6vw;
+                        margin-left: 0.6vw;
+                        background-color: var(--them-white-light);
+                        display: flex;
+                        justify-content: center;
+
+                        @media ($hd) {
+                            width: 58vw;
+                            margin-right: 4vw;
+                            margin-left: 4vw;
+                        }
+
+                        @media ($tablet) {
+                            width: 94vw;
+                            margin-right: 0.5vw;
+                            margin-left: 0.5vw;
+                        }
+
+                        @media ($phone) {
+                            height: 360px;
+                        }
+
+                        .item-feedbackContent {
+                            margin-top: 46px;
+                            width: 75%;
+
+                            @media ($phone) {
+                                width: 90%;
+                            }
+
+                            &__userimg {
+                                margin: 0 auto;
+                                width: 68px;
+                                height: 68px;
+                                border-radius: 50%;
+                                background-image: url(../img/crocodile.jpg);
+                            }
+
+                            &__username {
+                                font-family: $main-font;
+                                font-weight: 900;
+                                font-size: 20px;
+                                line-height: 23px;
+                                text-align: center;
+                                color: var(--them-dark-black2);
+                                margin-top: 17px;
+                            }
+
+                            &__userfeedback {
+                                font-family: $main-font;
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 16px;
+                                color: var(--them-dark-black2);
+                                margin-top: 17px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__bottom {
+            .testimonialsRangebox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30px;
+
+                &-rangevalue {
+                    display: flex;
+
+                    &__current-value {
+                        color: var(--them-dark-black1);
+                    }
+
+                    &__total-value {
+                        color: $gray;
+                    }
+                }
+
+                &-rangewrapper {
+                    &__range {
+                        width: 245px;
+                        background: $gray;
+
+                        &::-webkit-slider-thumb {
+                            background: var(--them-dark-black1);
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+
+            .bottom-btn {
+                width: 245px;
+                box-sizing: border-box;
+                margin: 0 auto;
+                margin-top: 30px;
+
+                @media ($phone) {
+                    margin-top: 22px;
+                }
+
+                &__link {
+                    padding: 17px 46px;
+                }
+            }
+        }
+    }
+}

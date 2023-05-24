@@ -1,0 +1,315 @@
+@import 'fonts';
+@import 'vars';
+@import 'mixins';
+@import 'header';
+@import 'footer';
+@import 'map';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --them-white: #FFFFFF;
+    --them-white-light: #F2F2F2;
+    --them-dark-black1: #333333;
+    --them-dark-black2: #4F4F4F;
+    --light-gray: rgba(189, 189, 189, 0.57);
+    --gray: #BDBDBD;
+    --the-map-black: #333333;
+    --the-map-white: #E1E1E1;
+}
+
+[dark] {
+    --them-white: #333333;
+    --them-white-light: #4F4F4F;
+    --them-dark-black1: #FFFFFF;
+    --them-dark-black2: #F2F2F2;
+    --light-gray: $light-gray;
+    --gray: $gray;
+    --the-map-black: #E1E1E1;
+    --the-map-white: #333333;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 1920px;
+    background-color: var(--them-white-light);
+}
+
+.btn {
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(106.89deg, #4BD8B5 -14.32%, #49D6DF 100.68%);
+    text-decoration: none;
+    color: $white;
+    transition: 0.5s ease;
+
+    &:hover {
+        background: linear-gradient(106.89deg, #4BD8B5 -14.32%, #49D6DF 100.68%);
+        transition: 0.5s ease;
+        box-shadow: 20px 20px 200px 6px #4BD8B5;
+    }
+
+    svg {
+        margin-right: 5px;
+    }
+
+    span {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+}
+
+.current-value {
+    font-family: $main-font;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.total-value {
+    font-family: $main-font;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 28px;
+    margin-top: 3px;
+}
+
+.rangeInput {
+    -webkit-appearance: none;
+    height: 8px;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 10px;
+
+        @media ($phone) {
+            height: 10px;
+        }
+    }
+}
+
+
+.main {
+    .article {
+        padding: 0 20px;
+
+        &-title {
+            font-family: $main-font;
+            text-align: center;
+            margin: 60px 0 20px 0;
+
+            &__text {
+                font-weight: 900;
+                font-size: 48px;
+                line-height: 56px;
+                color: var(--them-dark-black1);
+
+                @media ($tablet) {
+                    font-size: 40px;
+                    line-height: 46px;
+                }
+
+                @media ($phone) {
+                    font-size: 36px;
+                    line-height: 42px;
+                    margin: 35px 0 10px 0;
+                }
+            }
+        }
+
+        &-info {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: $main-font;
+            color: var(--them-dark-black2);
+            width: 100%;
+            max-width: 790px;
+            margin: 0 auto;
+        }
+    }
+
+    .mapSlider {
+        &-top {
+            position: relative;
+            width: 100%;
+            max-width: 1152px;
+            height: 157px;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: 54px;
+
+            @media ($hd) {
+                max-width: 725px;
+            }
+
+            @media ($tablet) {
+                max-width: 540px;
+            }
+
+            @media ($phone) {
+                max-width: 230px;
+                height: 85px;
+            }
+
+            .mapSlides-list {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                transition: 0.5s;
+
+                &__item-active {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 3px;
+                    height: 154px;
+                    width: 154px;
+                    transition: 0.5s;
+                    background: linear-gradient(103.3deg, #07EEE0, #DF496D 92.15%);
+                    border-radius: 50%;
+
+                    @media ($phone) {
+                        height: 85px;
+                        width: 85px;
+                    }
+
+                    .mapSlides-itemImg {
+                        height: 137px;
+                        width: 137px;
+                        transition: 0.3s;
+                        border-radius: 50%;
+                        background-position: center;
+                        background-size: 100%;
+                        z-index: 2;
+
+                        @media ($phone) {
+                            height: 75px;
+                            width: 75px;
+                        }
+                    }
+
+                    .list-item__blackbox {
+                        height: 150px;
+                        border-radius: 50%;
+                        width: 150px;
+                        background: var(--them-white-light);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: auto;
+                        transition: 0.3s;
+                        z-index: 2;
+
+                        @media ($phone) {
+                            height: 80px;
+                            width: 80px;
+                        }
+                    }
+                }
+
+                &__item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    margin: 0 12px;
+                    height: 118px;
+                    width: 118px;
+                    background: linear-gradient(103.3deg, #07EEE0 -15.1%, #DF496D 92.15%);
+                    transition: 0.5s;
+
+                    @media ($tablet) {
+                        margin: 0 5px;
+                    }
+
+                    @media ($phone) {
+                        height: 60px;
+                        width: 60px;
+                        margin: 0 5px;
+                    }
+
+                    .list-item__blackbox {
+                        height: 118px;
+                        width: 118px;
+                        background: var(--them-white-light);
+                        display: flex;
+                        align-items: center;
+                        margin: auto;
+                        justify-content: center;
+                        transition: 0.3s;
+                        z-index: 2;
+
+                        @media ($phone) {
+                            height: 60px;
+                            width: 60px;
+                        }
+
+                        .mapSlides-itemImg {
+                            border-radius: 50%;
+                            height: 108px;
+                            width: 108px;
+                            background-position: center;
+                            background-size: 100%;
+                            transition: 0.3s;
+                            z-index: 2;
+
+                            @media ($phone) {
+                                height: 60px;
+                                width: 60px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-bottom {
+            .mapSliderRangebox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30px;
+
+                &-rangevalue {
+                    display: flex;
+
+                    &__current-value {
+                        color: var(--them-dark-black1);
+                    }
+
+                    &__total-value {
+                        color: $gray;
+                    }
+                }
+
+                &-rangewrapper {
+                    &__range {
+                        background: $gray;
+                        width: 245px;
+
+                        &::-webkit-slider-thumb {
+                            background: var(--them-dark-black1);
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

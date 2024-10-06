@@ -1764,7 +1764,7 @@ body {
   border-radius: 5px;
 }
 .main .testimonials-slider__top .slides-feedbackImageList__item {
-  width: 31vw;
+  width: 31%;
   height: 96%;
   -webkit-box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.1);
           box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.1);
@@ -1781,14 +1781,14 @@ body {
 }
 @media ((max-width:1200px)) {
   .main .testimonials-slider__top .slides-feedbackImageList__item {
-    width: 58vw;
+    width: 58%;
     margin-right: 4vw;
     margin-left: 4vw;
   }
 }
 @media ((max-width:768px)) {
   .main .testimonials-slider__top .slides-feedbackImageList__item {
-    width: 94vw;
+    width: 94%;
     margin-right: 0.5vw;
     margin-left: 0.5vw;
   }

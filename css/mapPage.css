@@ -978,6 +978,10 @@ body {
   padding: 0;
   max-width: 1920px;
   background-color: var(--them-white-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .btn {

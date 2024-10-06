@@ -210,6 +210,7 @@
   width: 100%;
   background: #333333;
   padding: 90px 150px 70px 150px;
+  margin-top: auto;
 }
 @media ((max-width:1200px)) {
   .footer {

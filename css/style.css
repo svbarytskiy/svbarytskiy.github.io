@@ -1801,6 +1801,9 @@ body {
 .main .testimonials-slider__top .slides-feedbackImageList__item .item-feedbackContent {
   margin-top: 46px;
   width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @media ((max-width:576px)) {
   .main .testimonials-slider__top .slides-feedbackImageList__item .item-feedbackContent {
@@ -1830,6 +1833,7 @@ body {
   line-height: 16px;
   color: var(--them-dark-black2);
   margin-top: 17px;
+  text-align: center;
 }
 .main .testimonials-slider__bottom .testimonialsRangebox {
   display: -webkit-box;

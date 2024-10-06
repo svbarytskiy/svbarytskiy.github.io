@@ -642,9 +642,15 @@
 body {
   margin: 0 auto;
   padding: 0;
+  display: flex;
+  flex-direction: column;
   max-width: 1920px;
   background-color: var(--them-white-light);
   min-height: 100vh;
+}
+
+.main {
+  flex: 1
 }
 
 .main .intro {
